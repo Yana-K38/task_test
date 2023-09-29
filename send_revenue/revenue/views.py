@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import RevenueStatistic
@@ -16,4 +16,4 @@ class RevenueAPIView(APIView):
             total_conversion = Sum('spend__conversion'),
         )
         
-        return Response({'data': list(queryset)})
+        return Response({'data': list(queryset)}, status=status.HTTP_200_OK)
