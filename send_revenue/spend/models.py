@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class SpendStatistic(models.Model):
     name = models.CharField(max_length=255)
     date = models.DateField()
@@ -7,6 +8,6 @@ class SpendStatistic(models.Model):
     impressions = models.IntegerField(default=0)
     clicks = models.IntegerField(default=0)
     conversion = models.IntegerField(default=0)
-    
+
     def __str__(self):
         return self.name
