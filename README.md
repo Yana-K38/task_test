@@ -24,16 +24,19 @@
 
 ### Инструкция по развертыванию проекта.
 
-1. Клонируйте репозиторий:
+1. Клонируйте репозиторий и настройте виртуальное окружение:
 ```
 git@github.com:Yana-K38/task_test.git
 ```
+### Можно запустить программу локально на компьютере или через docker-compose.
+#### Для запуска через docker compose, сделайте следущие шаги 
+
 2. Создать файл .env в корне проекта и заполнить его всеми ключами:
 ```
 DB_NAME=postgres_task
 DB_USER=postgres
 DB_PASSWORD=postgres
-DB_HOST=localhost
+DB_HOST=postgres
 DB_PORT=5432
 POSTGRES_PASSWORD=postgres
 ```
@@ -54,8 +57,9 @@ docker exec -it <container backend ID> python manage.py createsuperuser
 ```
 $ docker exec -e DJANGO_SETTINGS_MODULE=send_revenue.settings <container backend ID> python custom_mixer.py
 ```
-##### После запуска проекта,  будут доступны эндпоинты:
-```http://127.0.0.1/admin/```
+
+##### После запуска проекта, будут доступны эндпоинты:
+```http://127.0.0.1/admin/```    
 ```
     login: admin
     password: admin
@@ -63,6 +67,32 @@ $ docker exec -e DJANGO_SETTINGS_MODULE=send_revenue.settings <container backend
 ```http://127.0.0.1/revenue/revenue-statistic/```
 
 ```http://127.0.0.1/spend/spend-statistic/```
+
+#### Для запуска на локальном компьютере, сделайте следущие шаги 
+2. Создать файл .env в корне проекта и заполнить его всеми ключами:
+```
+DB_NAME=postgres_task
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_HOST=localhost
+DB_PORT=5432
+```
+3. Перейдите в папку send_revenue/ и запустите приложение:
+```
+cd send_revenue/
+python manage.py runserver
+```
+
+##### После запуска проекта, будут доступны эндпоинты:
+```http://127.0.0.1:8000/admin/```    
+```
+    login: admin
+    password: admin
+```
+```http://127.0.0.1:8000/revenue/revenue-statistic/```
+
+```http://127.0.0.1:8000/spend/spend-statistic/```
+
 ##### Автор:
 
 Курзюкова Яна - Python - разработчик
