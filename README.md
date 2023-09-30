@@ -63,4 +63,13 @@ $ docker exec -e DJANGO_SETTINGS_MODULE=send_revenue.settings <container backend
 ```http://127.0.0.1/revenue/revenue-statistic/```
 
 ```http://127.0.0.1/spend/spend-statistic/```
+##### Автор:
+
+Курзюкова Яна - Python - разработчик
+
+```Телеграм  @ana_kurziukova```
+
+```LinkedIn  https://www.linkedin.com/in/iana-kurziukova-b7a331256/ ```
+
+
 
